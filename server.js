@@ -16,6 +16,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 const apiRoutes = require("./routes/index");
+const HttpException = require('./utils/httpException');
+
 app.use("/api/v1", apiRoutes);
 
 app.all("*", (req, res, next) => {
